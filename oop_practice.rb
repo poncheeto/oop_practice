@@ -24,3 +24,23 @@ puts GoodDog.ancestors
 puts ''
 puts "---HumanBeing ancestors---"
 puts HumanBeing.ancestors
+
+# How to create object in Ruby
+class Dog
+end
+
+mimi = Dog.new
+
+# How to create a module and include it properly
+module Speak
+  def speak(sound)
+    puts sound
+  end
+end
+
+class Dog
+  include Speak
+end
+
+mimi = Dog.new
+mimi.speak("Yap")
