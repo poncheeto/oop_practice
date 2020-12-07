@@ -19,6 +19,10 @@ class MyCar
     puts "Speed: #{speed} mph"
   end
 
+  def engine_off
+    @speed = 0
+    puts "Car off"
+  end
 end
 
 neon = MyCar.new(2013, "Red", "Mazda3")
