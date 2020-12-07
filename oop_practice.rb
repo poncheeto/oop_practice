@@ -1,5 +1,6 @@
 class MyCar
-  attr_accessor :speed
+  attr_accessor :speed, :color
+  attr_reader :year
 
   def initialize(year, color, model)
     @year = year
@@ -26,5 +27,6 @@ class MyCar
 end
 
 neon = MyCar.new(2013, "Red", "Mazda3")
-neon.speed_up(20)
-neon.slow_down(15)
+p neon
+neon.color = "White"
+p neon.color
