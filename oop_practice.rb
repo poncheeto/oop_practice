@@ -24,9 +24,14 @@ class MyCar
     @speed = 0
     puts "Car off"
   end
+
+  def spray_paint(color)
+    self.color = color
+  end
+
 end
 
 neon = MyCar.new(2013, "Red", "Mazda3")
 p neon
-neon.color = "White"
+neon.spray_paint("Black")
 p neon.color
