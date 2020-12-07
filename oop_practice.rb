@@ -1,37 +1,7 @@
-class MyCar
-  attr_accessor :speed, :color
-  attr_reader :year
-
-  def initialize(year, color, model)
-    @year = year
-    @color = color
-    @model = model
-
-    @speed = 0
+class GoodDog
+  def self.what_am_i
+    "I'm a GoodDog class!"
   end
-
-  def speed_up(accelerate)
-    @speed += accelerate
-    puts "Speed: #{speed} mph"
-  end
-
-  def slow_down(decelerate)
-    @speed -= decelerate
-    puts "Speed: #{speed} mph"
-  end
-
-  def engine_off
-    @speed = 0
-    puts "Car off"
-  end
-
-  def spray_paint(color)
-    self.color = color
-  end
-
 end
 
-neon = MyCar.new(2013, "Red", "Mazda3")
-p neon
-neon.spray_paint("Black")
-p neon.color
+GoodDog.what_am_i
