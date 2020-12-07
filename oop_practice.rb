@@ -11,8 +11,16 @@ class MyCar
 
   def speed_up(accelerate)
     @speed += accelerate
-    puts "Speed: #{speed}"
+    puts "Speed: #{speed} mph"
+  end
+
+  def slow_down(decelerate)
+    @speed -= decelerate
+    puts "Speed: #{speed} mph"
   end
 
 end
 
+neon = MyCar.new(2013, "Red", "Mazda3")
+neon.speed_up(20)
+neon.slow_down(15)
