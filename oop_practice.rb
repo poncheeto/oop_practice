@@ -1,31 +1,33 @@
-class GoodDog
-  attr_accessor :name, :height, :weight
+class MyCar
 
-  def initialize(n, h, w)
-    self.name   = n
-    self.height = h
-    self.weight = w
+  def initialize(year, model, color)
+    @year = year
+    @model = model
+    @color = color
+    @current_speed = 0
   end
 
-  def change_info(n, h, w)
-    self.name   = n
-    self.height = h
-    self.weight = w
+  def speed_up(number)
+    @current_speed += number
+    puts "You push the gas and accelerate #{number} mph."
   end
 
-  def info
-    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
+  def brake(number)
+    @current_speed -= number
+    puts "You push the brake and decelerate #{number} mph."
   end
 
-  def what_is_self
-    self
+  def current_speed
+    puts "You are now going #{@current_speed} mph."
   end
-end
 
-sparky = GoodDog.new('Sparky', '12 inches', '10 lbs')
-p sparky.what_is_self
-
-class myAwesomeClass
-  def self.this_is_a_class_method
+  def shut_down
+    @current_speed = 0
+    puts "Let's park this bad boy!"
   end
+
+  def self.mpg(distance, gallons)
+    mpg = distance / gallons
+  end
+  
 end
