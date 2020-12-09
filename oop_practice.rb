@@ -5,21 +5,10 @@ class Animal
 end
 
 class GoodDog < Animal
-  attr_accessor :name
-
-  def initialize(n)
-    self.name = n
-  end
-
   def speak
-    "#{self.name} says arf!"
+    super + " from GoodDog class"
   end
 end
 
-class Cat < Animal
-end
-
-sparky = GoodDog.new('Sparky')
-paws = Cat.new
-puts sparky.speak
-puts paws.speak
+sparky = GoodDog.new
+sparky.speak
