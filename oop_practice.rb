@@ -26,8 +26,8 @@ class MyCar
     puts "Let's park this bad boy!"
   end
 
-  def self.mpg(distance, gallons)
-    mpg = distance / gallons
+  def self.mpg(miles, gallons)
+    MyCar.mpg = miles / gallons
   end
   
 end
