@@ -1,33 +1,14 @@
-class MyCar
-
-  def initialize(year, model, color)
-    @year = year
-    @model = model
-    @color = color
-    @current_speed = 0
+class Person
+  attr_reader :name
+  def initialize(name)
+    @name = name
   end
 
-  def speed_up(number)
-    @current_speed += number
-    puts "You push the gas and accelerate #{number} mph."
+  def to_s
+    puts "Hey, there now! You did it!"
   end
 
-  def brake(number)
-    @current_speed -= number
-    puts "You push the brake and decelerate #{number} mph."
-  end
-
-  def current_speed
-    puts "You are now going #{@current_speed} mph."
-  end
-
-  def shut_down
-    @current_speed = 0
-    puts "Let's park this bad boy!"
-  end
-
-  def self.mpg(miles, gallons)
-    MyCar.mpg = miles / gallons
-  end
-  
 end
+
+bob = Person.new('Steve')
+puts bob
