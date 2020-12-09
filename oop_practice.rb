@@ -1,14 +1,13 @@
 class Animal
-  def speak
-    "Hello!"
+  def initialize
   end
 end
 
-class GoodDog < Animal
-  def speak
-    super + " from GoodDog class"
+class Bear < Animal
+  def initialize(color)
+    super()
+    @color = color
   end
 end
 
-sparky = GoodDog.new
-sparky.speak
+bear = Bear.new('black')
