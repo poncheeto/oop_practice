@@ -1,14 +1,16 @@
-class Person
-  attr_reader :name
-  def initialize(name)
-    @name = name
+class Animal
+  def speak
+    "Hello!"
   end
-
-  def to_s
-    puts "Hey, there now! You did it!"
-  end
-
 end
 
-bob = Person.new('Steve')
-puts bob
+class GoodDog < Animal
+end
+
+class Cat < Animal
+end
+
+sparky = GoodDog.new
+paws = Cat.new
+puts sparky.speak
+puts paws.speak
