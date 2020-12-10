@@ -10,9 +10,11 @@ module Mammal
       p "#{name}"
     end
   end
+
+  def self.some_out_of_place_method(num)
+    num ** 2
+  end
 end
 
-buddy = Mammal::Dog.new
-kitty = Mammal::Cat.new
-buddy.speak('Arf!')
-kitty.say_name('Kitty')
+value = Mammal.some_out_of_place_method(4)
+value2 = Mammal::some_out_of_place_method(4)
