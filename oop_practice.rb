@@ -1,13 +1,29 @@
-class Animal
-  def initialize
+module Swimmable
+  def swim
+    "I'm swimming!"
   end
 end
 
-class Bear < Animal
-  def initialize(color)
-    super()
-    @color = color
+  class Animal; end
+  
+  class Fish < Animal
+    include Swimmable
   end
-end
 
-bear = Bear.new('black')
+  class Mammal < Animal
+  end
+
+  class Cat < Mammal
+  end
+
+  class Dog < Mammal
+    include Swimmable
+  end
+
+  sparky = Dog.new
+  neemo = Fish.new
+  paws = Cat.new
+
+  sparky.swim
+  neemo.swim
+  paws.swim
