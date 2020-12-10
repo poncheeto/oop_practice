@@ -22,8 +22,10 @@ class Animal
   end
 end
 
-puts Animal.ancestors
-fido = Animal.new
-fido.speak
-fido.walk
-fido.swim
+class GoodDog < Animal
+  include Swimmable
+  include Climbable
+end
+
+puts "---GoodDog method lookup---"
+puts GoodDog.ancestors
