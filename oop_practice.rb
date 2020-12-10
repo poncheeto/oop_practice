@@ -1,29 +1,29 @@
-module Swimmable
-  def swim
-    "I'm swimming!"
+module Walkable
+  def walk
+    "I'm walking."
   end
 end
 
-  class Animal; end
-  
-  class Fish < Animal
-    include Swimmable
+module Swimmable
+  def swim
   end
+end
 
-  class Mammal < Animal
+module Climbable
+  def climb
   end
+end
 
-  class Cat < Mammal
+class Animal
+  include Walkable
+
+  def speak
+    "I'm an animal, and I speak!"
   end
+end
 
-  class Dog < Mammal
-    include Swimmable
-  end
-
-  sparky = Dog.new
-  neemo = Fish.new
-  paws = Cat.new
-
-  sparky.swim
-  neemo.swim
-  paws.swim
+puts Animal.ancestors
+fido = Animal.new
+fido.speak
+fido.walk
+fido.swim
