@@ -1,11 +1,14 @@
-class Animal
-  def a_public_method
-    "Will this work?" + self.a_protected_method
-  end
-
-  protected
-
-  def a_protected_method
-    "Yes, I'm protected!"
+class Parent
+  def say_hi
+    p "Hi from Parent."
   end
 end
+
+class Child < Parent
+  def say_hi
+    p "Hi from Child"
+  end
+end
+
+son = Child.new
+son.send :say_hi
