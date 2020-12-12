@@ -1,3 +1,9 @@
+module Towable
+  def can_tow?(pounds)
+    pounds < 2000 ? true : false
+  end
+end
+
 class Vehicle
   @@number_of_vehicles = 0
 
@@ -9,15 +15,24 @@ class Vehicle
     @@number_of_vehicles += 1
   end
 
-  def number_of_vehicles
+  def self.number_of_vehicles
     puts @@number_of_vehicles
   end
 end
 
 class MyCar < Vehicle
+include Towable
   NUMBER_OF_DOORS = 4
 end
 
 class MyTruck < Vehicle
+include Towable
+
   NUMBER_OF_DOORS = 2
 end
+
+car = MyCar.new
+car2 = MyTruck.new
+Vehicle.number_of_vehicles
+p car2.can_tow?(1500)
+p car.can_tow?(2500)
