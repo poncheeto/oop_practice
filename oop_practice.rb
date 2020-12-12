@@ -5,17 +5,19 @@ class Vehicle
     puts "#{miles / gallons} miles per gallon of gas"
   end
 
-  def print_value
+  def initialize
+    @@number_of_vehicles += 1
+  end
+
+  def number_of_vehicles
     puts @@number_of_vehicles
   end
-  
 end
 
 class MyCar < Vehicle
   NUMBER_OF_DOORS = 4
 end
 
-  class MyTruck < Vehicle
-    NUMBER_OF_DOORS = 2
-  end
+class MyTruck < Vehicle
+  NUMBER_OF_DOORS = 2
 end
