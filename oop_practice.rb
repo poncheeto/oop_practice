@@ -5,20 +5,20 @@ module Towable
 end
 
 class Vehicle
+  attr_accessor :color
+  attr_reader :model, :year
   @@number_of_vehicles = 0
-  
-
-  def initialize
-    @@number_of_vehicles += 1
-    @current_speed = 0
-  end
 
   def self.number_of_vehicles
-    puts @@number_of_vehicles
+    puts "This program has created #{@@number_of_vehicles} vehicles"
   end
 
-  def self.gas_mileage(gallons, miles)
-    puts "#{miles / gallons} miles per gallon of gas"
+  def initialize(year, model, color)
+    @year = year
+    @model = model
+    @color = color
+    @current_speed = 0
+    @@number_of_vehicles += 1
   end
 
   def speed_up(number)
@@ -39,6 +39,25 @@ class Vehicle
     @current_speed = 0
     puts "Let's park this bad boy!"
   end
+
+  def self.gas_mileage(gallons, miles)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+
+  def spray_paint(color)
+    self.color = color
+    puts "Your new #{color} paint job looks great!"
+  end
+
+  def print_age
+    puts age_of_vehicle
+  end
+
+  private
+
+  def age_of_vehicle
+    Time.now.year - self.year
+  end
 end
 
 class MyCar < Vehicle
@@ -53,9 +72,5 @@ include Towable
   NUMBER_OF_DOORS = 2
 end
 
-truck = MyTruck.new
-truck.speed_up(5)
-truck.current_speed
-truck.brake(5)
-truck.current_speed
-truck.shut_down
+truck = MyTruck.new(2013, "Ford", "black")
+truck.print_age
