@@ -6,9 +6,13 @@ class Student
     @grade = g
   end
 
-  def better_grade_than?()
+  def better_grade_than?(name)
+    if grade > name.grade
+      puts "Well done!"
+    end
+  end
 
-  private
+  protected
 
   def grade
     @grade
@@ -16,4 +20,5 @@ class Student
 end
 
 poncho = Student.new("Poncho", 93)
-p poncho.grade
+aubz = Student.new("Aubz", 75)
+poncho.better_grade_than?(aubz)
