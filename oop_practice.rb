@@ -1,13 +1,5 @@
 class Person
   MAX_HEALTH = 120
-  
-  def heal
-    self.health += 1 unless self.health + 1 > MAX_HEALTH
-  end
-end
-
-class Viking < Person
-  attr_accessor :name, :age, :health, :strength
 
   def initialize(name, health, age, strength)
     @name = name
@@ -16,15 +8,34 @@ class Viking < Person
     @strength = strength
   end
 
-  def self.create_warrior(name)
+  def heal
+    self.health += 1 unless self.health + 1 > MAX_HEALTH
+  end
+end
+
+class Viking < Person
+  attr_accessor :name, :age, :health, :strength
+
+  def initialize(name, health, age, strength, weapon)
+    super(name, health, age, strength)
+    @weapon = weapon
+  end
+
+  def self.create_warrior
+    name = random_name
     age = rand * 20 + 15
     health = [age * 5, 120].min
     strength = [age / 2, 10].min
-    Viking.new(name, health, age, strength)
+    weapon = random_weapon
+    Viking.new(name, health, age, strength, weapon)
   end
 
   def self.random_name
     ["Erik", "Lars", "Leif"].sample
+  end
+
+  def self.random_weapon
+    ["sword", "axe", "mace", "broom handle"].sample
   end
 
   def self.silver_to_gold(silver_pieces)
@@ -45,12 +56,15 @@ class Viking < Person
     self.health -= damage
     shout("OUCH!")
   end
-  
+
   def heal
-    self.health = [self.health + 2, MAX_HEALTH].min
+    # self.health = [self.health + 2, MAX_HEALTH].min
+    # puts "Ready for battle!"
+
+    2.times { super }
     puts "Ready for battle!"
   end
-  
+
   def shout(str)
     puts str
   end
@@ -61,5 +75,4 @@ class Viking < Person
   end
 end
 
-rolo = Viking.create_warrior(Viking.random_name)
-p rolo
+p Viking.create_warrior
