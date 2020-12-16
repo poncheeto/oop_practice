@@ -15,6 +15,20 @@ class Viking
     Viking.new(name, health, age, strength)
   end
 
+  def self.random_name
+    ["Erik", "Lars", "Leif"].sample
+  end
+
+  def self.silver_to_gold(silver_pieces)
+    silver_pieces / 10
+  end
+
+  class << self
+    def gold_to_silver(gold_pieces)
+      gold_pieces * 10
+    end
+  end
+
   def attack(enemy)
     # code to fight
   end
@@ -34,5 +48,5 @@ class Viking
   end
 end
 
-rolo = Viking.create_warrior("Rolo")
+rolo = Viking.create_warrior(Viking.random_name)
 p rolo
