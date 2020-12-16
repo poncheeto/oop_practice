@@ -1,10 +1,11 @@
 class Viking
   attr_accessor :name, :age, :health, :strength
+  @@starting_health = 100
 
-  def initialize(name, age, health, strength)
+  def initialize(name, age, strength)
     @name = name
     @age = age
-    @health = health
+    @health = @@starting_health
     @strength = strength
   end
 
@@ -19,6 +20,11 @@ class Viking
   
   def shout(str)
     puts str
+  end
+
+  def sleep
+    self.health += unless health >= 99
+    end
   end
 end
 
