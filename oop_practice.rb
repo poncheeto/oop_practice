@@ -1,4 +1,12 @@
-class Viking
+class Person
+  MAX_HEALTH = 120
+  
+  def heal
+    self.health += 1 unless self.health + 1 > MAX_HEALTH
+  end
+end
+
+class Viking < Person
   attr_accessor :name, :age, :health, :strength
 
   def initialize(name, health, age, strength)
@@ -36,6 +44,11 @@ class Viking
   def take_damage(damage)
     self.health -= damage
     shout("OUCH!")
+  end
+  
+  def heal
+    self.health = [self.health + 2, MAX_HEALTH].min
+    puts "Ready for battle!"
   end
   
   def shout(str)
