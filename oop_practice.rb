@@ -1,12 +1,18 @@
 class Viking
   attr_accessor :name, :age, :health, :strength
-  @@starting_health = 100
 
-  def initialize(name, age, strength)
+  def initialize(name, health, age, strength)
     @name = name
     @age = age
-    @health = @@starting_health
+    @health = health
     @strength = strength
+  end
+
+  def self.create_warrior(name)
+    age = rand * 20 + 15
+    health = [age * 5, 120].min
+    strength = [age / 2, 10].min
+    Viking.new(name, health, age, strength)
   end
 
   def attack(enemy)
@@ -28,7 +34,5 @@ class Viking
   end
 end
 
-oleg = Viking.new("Oleg", 19, 100, 8)
-p oleg.health
-oleg.health = 80
-p oleg.health
+rolo = Viking.create_warrior("Rolo")
+p rolo
