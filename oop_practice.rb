@@ -11,6 +11,15 @@ class Viking
   def attack(enemy)
     # code to fight
   end
+
+  def take_damage(damage)
+    self.health -= damage
+    shout("OUCH!")
+  end
+  
+  def shout(str)
+    puts str
+  end
 end
 
 oleg = Viking.new("Oleg", 19, 100, 8)
