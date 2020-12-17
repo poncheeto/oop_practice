@@ -54,7 +54,7 @@ class Viking < Person
 
   def take_damage(damage)
     self.health -= damage
-    shout("OUCH!")
+    die if self.health <= 0
   end
 
   def heal
@@ -73,6 +73,14 @@ class Viking < Person
     self.health += unless health >= 99
     end
   end
+
+  private
+
+  def die
+    puts "#{self.name} has been killed :("
+    # self.dead = true
+  end
 end
 
-p Viking.create_warrior
+warrior =  Viking.create_warrior
+warrior.take_damage(200)
