@@ -24,3 +24,10 @@ class Movie
     @@all << self
   end
 end
+
+bow_tie = Cinema.new("BowTie Cinema", "Main St, Richmond")
+p bow_tie
+parasite = Movie.new("Parasite", "7:00")
+p parasite
+bow_tie.add_movie(parasite)
+p bow_tie
