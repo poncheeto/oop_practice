@@ -6,6 +6,11 @@ class Cinema
     @location = location
     @movies = []
   end
+
+  def add_movie(movie)
+    @movies << movie
+    movie.cinema = self
+  end
 end
 
 class Movie
@@ -17,10 +22,5 @@ class Movie
     @title = title
     @showtimes = showtime
     @@all << self
-  end
-
-  def add_movie(movie)
-    @movies << movies
-    movie.cinema = self
   end
 end
