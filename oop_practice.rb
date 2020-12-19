@@ -9,7 +9,7 @@ end_year = 2000
 (start_year..end_year).each do |yr|
   begin
     rpage = open("#{remote_base_url}/#{yr}")
-  rescue StanardError=>e
+  rescue StandardError=>e
     puts "Error: #{e}"
   else
     rdata = rpage.read
