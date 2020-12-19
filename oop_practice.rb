@@ -1,24 +1,15 @@
-require 'open-uri'
-require 'timeout'
-
-remote_base_url = "http://en.wikipedia.org/wiki"
-
-start_year = 1900
-end_year = 2000
-
-(start_year..end_year).each do |yr|
+for i in 'A'..'C'
+  retries = 2
   begin
-    rpage = open("#{remote_base_url}/#{yr}")
-  rescue StandardError=>e
-    puts "Error: #{e}"
-  else
-    rdata = rpage.read
-  ensure
-    puts "sleeping"
-    sleep 5
-  end
-
-  if rdata
-    File.open("copy-of-#{yr}.html", "w"){ |f| f.write(rdata) }
+    puts "Executing command #{i}"
+    raise "Exception: #{i}"
+  rescue Exception=>e
+    puts "\tCaught: #{e}"
+    if retries > 0
+      puts "\tTrying #{retries} more times\n"
+      retries -= 1
+      sleep 2
+      retry
+    end
   end
 end
