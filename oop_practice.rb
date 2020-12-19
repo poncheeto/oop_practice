@@ -1,20 +1,24 @@
-# while 1
-#   puts "Enter a number>>"
-#   begin
-#     num = Kernel.gets.match(/\d+/)[0]
-#   rescue
-#     puts "Erroneous input! Try again..."
-#   else
-#     puts "#{num} + 1 is: #{num.to_i+1}"
-#   end
-# end
+require 'open-uri'
+require 'timeout'
 
-while 1
-  puts "Enter a number>>"
-  if num = Kernel.gets.match(/\d+/)
-    num = num[0]
-    puts "#{num} + 1 is: #{num.to_i+1}"
+remote_base_url = "http://en.wikipedia.org/wiki"
+
+start_year = 1900
+end_year = 2000
+
+(start_year..end_year).each do |yr|
+  begin
+    rpage = open("#{remote_base_url}/#{yr}")
+  rescue StanardError=>e
+    puts "Error: #{e}"
   else
-    puts "Erroneous input! Try again..."
+    rdata = rpage.read
+  ensure
+    puts "sleeping"
+    sleep 5
+  end
+
+  if rdata
+    File.open("copy-of-#{yr}.html", "w"){ |f| f.write(rdata) }
   end
 end
