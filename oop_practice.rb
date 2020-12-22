@@ -1,12 +1,5 @@
-class Lion
-  def initialize(name)
-    @name = name
-  end
-  
-  def name
-    return(@name)
+class Celsius
+  def initialize(temp)
+    @temp = temp
   end
 end
-
-simba = Lion.new("Simba")
-simba.return_lions_name
