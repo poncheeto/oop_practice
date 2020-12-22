@@ -1,7 +1,12 @@
-class Calculator
-  def self.add(x, y)
-    puts x + y
+class Lion
+  def initialize(name)
+    @name = name
+  end
+  
+  def return_lions_name
+    return(@name)
   end
 end
 
-Calculator.add(5, 6)
+simba = Lion.new("Simba")
+simba.return_lions_name
