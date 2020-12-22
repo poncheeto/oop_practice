@@ -1,4 +1,2 @@
-array = Array.new()
-array.push("nice")
-array.push("hair")
-puts array.inspect
+a_string = String.new("ear")
+a_string.class
