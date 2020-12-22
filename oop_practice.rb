@@ -1,7 +1,7 @@
-class Fish
-  def self.general_overview()
-    return("Fish are animals that live in the sea")
+class Calculator
+  def self.add(x, y)
+    puts x + y
   end
 end
 
-Fish.general_overview
+Calculator.add(5, 6)
