@@ -3,7 +3,7 @@ class Lion
     @name = name
   end
   
-  def return_lions_name
+  def name
     return(@name)
   end
 end
