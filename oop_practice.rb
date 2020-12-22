@@ -1,1 +1,4 @@
-x = "road trip"
+array = Array.new()
+array.push("nice")
+array.push("hair")
+puts array.inspect
