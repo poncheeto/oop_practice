@@ -1,5 +1,8 @@
-class Animal
+class Dog
+  def speak()
+    return ("ruff ruff")
+  end
 end
 
-fido = Animal.new()
-p fido
+spot = Dog.new()
+spot.speak
