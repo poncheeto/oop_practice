@@ -1,12 +1,9 @@
-class Dog
-  def initialize(name)
-    @name = name
+class Insect
+  def initialize(age_in_days)
+    @age_in_days = age_in_days
   end
 
-  def bark()
-    puts "Ruff ruff"
+  def age_in_years
+    puts @age_in_days.to_f / 365
   end
 end
-
-fido = Dog.new("Fido")
-fido.bark
