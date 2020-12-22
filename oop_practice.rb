@@ -1,15 +1,29 @@
-for i in 'A'..'C'
-  retries = 2
+require 'open-uri'
+remote_base_url = "http://en.wikipedia.org/wiki"
+
+[1900, 1910, 'xj3490', 2000].each do |yr|
+
+  retries = 3
+
   begin
-    puts "Executing command #{i}"
-    raise "Exception: #{i}"
-  rescue Exception=>e
-    puts "\tCaught: #{e}"
+    url = "#{remote_base_url}/#{yr}"
+    puts "Getting page #{url}"
+    rpage = open(url)
+  rescue StandardError=>each
+    puts "\tError: #{e}"
     if retries > 0
-      puts "\tTrying #{retries} more times\n"
+      puts "\rTrying #{retries} more times"
       retries -= 1
-      sleep 2
+      sleep 1
       retry
+    else
+      puts "\t\tCan't get #{yr}, so moving on"
     end
+  else 
+    puts "\tGot page for #{yr}"
+  ensure
+    puts "Ensure branch; sleeping"
+    sleep 1
+
   end
 end
