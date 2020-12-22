@@ -1,12 +1,18 @@
-class Waterbottle
-  def initialize(size)
-    @size = size
+class Person
+  def initialize(age)
+    @age = age
   end
 
-  def size
-    puts @size
+  def age=(new_age)
+    @age = new_age
+  end
+
+  def age
+    @age
   end
 end
 
-bottle = Waterbottle.new('32 oz')
-bottle.size
+poncho = Person.new(30)
+p poncho.age
+poncho.age = 21
+p poncho.age
