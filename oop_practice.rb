@@ -1,12 +1,7 @@
-module MathHelper
-  def multiply_by_two(num)
-    num * 2
+class BaseballPlayer
+  def initialize(hits, walks, at_bats)
+    @hits = hits
+    @walks = walks
+    @at_bats = at_bats
   end
 end
-
-class Homework
-  include MathHelper
-end
-
-math = Homework.new
-p math.multiply_by_two(12)
