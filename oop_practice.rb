@@ -1,8 +1,8 @@
 while 1 
   puts "Enter a number>>"
   begin
-    num = Kernal.gets.match(/\d+/)[0]
-  rescue StandardError=>e
+    num = Kernel.gets.match(/\d+/)[0]
+  rescue Exception=>e
     puts "Erroneous input!"
     puts e
     puts "\tTry again...\n"
