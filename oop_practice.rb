@@ -1,2 +1,5 @@
-a_string = String.new("ear")
-a_string.class
+class Animal
+end
+
+fido = Animal.new()
+p fido
