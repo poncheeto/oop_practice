@@ -1,8 +1,7 @@
-class Dog
-  def speak()
-    return ("ruff ruff")
+class Fish
+  def self.general_overview()
+    return("Fish are animals that live in the sea")
   end
 end
 
-spot = Dog.new()
-spot.speak
+Fish.general_overview
