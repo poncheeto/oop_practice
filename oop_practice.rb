@@ -1,9 +1,12 @@
-class Insect
-  def initialize(age_in_days)
-    @age_in_days = age_in_days
+class Waterbottle
+  def initialize(size)
+    @size = size
   end
 
-  def age_in_years
-    puts @age_in_days.to_f / 365
+  def size
+    puts @size
   end
 end
+
+bottle = Waterbottle.new('32 oz')
+bottle.size
