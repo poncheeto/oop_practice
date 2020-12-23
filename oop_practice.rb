@@ -1,14 +1,8 @@
-# variables
-
-tree_name = "pine"
-$car_name = "Peugeot"
-@sea_name = "Black sea"
-
-class Animal
-  @@species = "Cat"
+def method1
+  x = 5
+  p x
 end
 
-p local_variables
-p global_variables.include? :$car_name
-p self.instance_variables
-p Animal.class_variables
+method1
+
+p x
