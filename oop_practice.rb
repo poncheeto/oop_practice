@@ -1,11 +1,6 @@
-
-x = 5
-
-def method1
-  x = 10
-  p x
+def rectangle_area a, b
+  puts local_variables
+  return a * b
 end
 
-method1
-
-p x
+puts rectangle_area 5, 6
