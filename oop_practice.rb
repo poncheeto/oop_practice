@@ -1,12 +1,13 @@
-module MathHelpers
-  def exponent(a, b)
-    a ** b
-  end
-end
+# variables
 
-class Calculator
-  include MathHelpers
+name = "Jane"
+placeOfBirth = "Bratislava"
+placeOfBirth = "Kosice"
+favorite_season = "autumn"
 
-  def square_root(a)
-    a.exponent(0.5)
-  end
+n1 = 2
+n2 = 4
+n3 = 7
+
+p name, placeOfBirth, favorite_season
+p n1, n2, n3
