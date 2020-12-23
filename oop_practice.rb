@@ -1,11 +1,14 @@
 # variables
 
-name = "Jane"
-placeOfBirth = "Bratislava"
-occupation = "student"
+tree_name = "pine"
+$car_name = "Peugeot"
+@sea_name = "Black sea"
 
-i = 5
-while i > 0 do
-  puts name
-  i -= 1
+class Animal
+  @@species = "Cat"
 end
+
+p local_variables
+p global_variables.include? :$car_name
+p self.instance_variables
+p Animal.class_variables
